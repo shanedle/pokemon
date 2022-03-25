@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { Skeleton, SimpleGrid } from "@chakra-ui/react";
+import { Container, Skeleton, SimpleGrid } from "@chakra-ui/react";
 
 import { GET_POKEMONS } from "../queries";
 import WildPokemon from "../component/WildPokemon";
@@ -31,7 +31,7 @@ function PokemonList() {
   }, [data]);
 
   return (
-    <div>
+    <Container maxW="container.xl">
       <InfiniteScroll
         dataLength={pokemonData.length}
         next={() => setOffset(offset + LIMIT)}
@@ -56,7 +56,7 @@ function PokemonList() {
           ))}
         </SimpleGrid>
       </InfiniteScroll>
-    </div>
+    </Container>
   );
 }
 

@@ -1,11 +1,11 @@
 import { css } from "@emotion/css";
 import Modal from "./Modal";
 
-const FailCatchModal = ({ isShow, onClick }) => {
+const FailCatchModal = ({ isShow, onClick, pokemonName }) => {
   return (
     <Modal show={isShow}>
       <div className={styles.container}>
-        <p className={styles.title}>Oopss pokemon run away</p>
+        <p className={styles.title}>Oh no! The wild {pokemonName} fled.</p>
         <button className={styles.button} onClick={onClick}>
           Okay
         </button>

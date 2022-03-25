@@ -14,7 +14,7 @@ const SuccessCatchModal = ({ isShow, onClick, pokemonName }) => {
   return (
     <Modal show={isShow}>
       <form className={styles.container} onSubmit={savePokemon}>
-        <p className={styles.title}>{pokemonName} Caught</p>
+        <p className={styles.title}>Gotcha! {pokemonName} was caught!</p>
 
         <img src={PokeBall} className={styles.logo} alt="pokeball" />
         <input

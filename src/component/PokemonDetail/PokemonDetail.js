@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Flex, VStack, Box, Button, Text, Image } from "@chakra-ui/react";
+import { Flex, VStack, Box, Text, Image, Button } from "@chakra-ui/react";
 
 import { usePokemon } from "../../context/PokemonContext";
 import { catchAction } from "../../context/PokemonReducer";
@@ -13,6 +13,13 @@ import PokemonMoves from "./PokemonMoves";
 
 import FailCatchModal from "../FailCatchModal";
 import SuccessCatchModal from "../SuccessCatchModal";
+
+import PokeBall from "../../asset/pokeball.svg";
+
+const section_title = {
+  fontWeight: "Bold",
+  fontSize: "24px",
+};
 
 const pokemon_img = {
   display: "block",
@@ -28,10 +35,24 @@ const pokemon_name = {
   textAlign: "center",
 };
 
-const section_title = {
-  fontWeight: "Bold",
-  fontSize: "24px",
-  margin: "20px 5px 5px",
+const button_container = {
+  justify: "space-between",
+  overflow: "hidden",
+  position: "fixed",
+  bottom: "0",
+  width: "100%",
+  left: "0",
+  wrap: "wrap",
+  padding: "1rem 0",
+};
+
+const button_img = {
+  boxShadow: "xl",
+  borderRadius: "full",
+  cursor: "pointer",
+  height: "30px",
+  width: "30px",
+  alt: "Catch Pokemon",
 };
 
 const PokemonDetail = ({ pokemonData }) => {
@@ -106,7 +127,6 @@ const PokemonDetail = ({ pokemonData }) => {
         </VStack>
 
         <VStack w="full" h="full" p={5} spacing={5} alignItems="flex-start">
-          <Button onClick={catchPokemon}>Catch</Button>
           <Text {...section_title}>Type</Text>
           <PokemonTypes typeList={pokemonData.types} />
           <Text {...section_title}>Stats</Text>
@@ -114,6 +134,7 @@ const PokemonDetail = ({ pokemonData }) => {
           <Text {...section_title}>Moves</Text>
           <PokemonMoves movesList={pokemonData.moves} />
           <FailCatchModal
+            pokemonName={pokemonData.name}
             isShow={showModal === "fail"}
             onClick={dismissModal}
           />
@@ -123,6 +144,27 @@ const PokemonDetail = ({ pokemonData }) => {
             onClick={saveToCollection}
           />
         </VStack>
+      </Flex>
+
+      <Flex {...button_container}>
+        <Box onClick={catchPokemon} margin="auto">
+          <Flex align="center">
+            <Button
+              bg="#1ECBE1"
+              boxShadow="base"
+              borderRadius="full"
+              height="unset"
+              padding="13px 26px"
+              textTransform="capitalize"
+              _hover={{
+                bg: "#18DFDF",
+              }}
+              leftIcon={<Image {...button_img} src={PokeBall} />}
+            >
+              Catch {pokemonData.name}
+            </Button>
+          </Flex>
+        </Box>
       </Flex>
     </>
   );
