@@ -90,13 +90,13 @@ const PokemonDetail = ({ pokemonData }) => {
   };
 
   const saveToCollection = (nickname) => {
-    const catchedPokemon = {
+    const caughtPokemon = {
       id: new Date().getTime(),
       name: pokemonData.name,
       sprites: pokemonData.sprites,
       nickname: nickname,
     };
-    dispatch(catchAction(catchedPokemon));
+    dispatch(catchAction(caughtPokemon));
     dismissModal();
   };
 

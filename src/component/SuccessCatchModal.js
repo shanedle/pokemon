@@ -62,7 +62,7 @@ const styles = {
     width: 100%;
   `,
   input: css`
-    width: 14rem;
+    width: 100%;
     display: block;
     margin-bottom: 1rem;
     font-size: 1rem;
