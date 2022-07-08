@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 import { useHistory } from "react-router-dom";
-import { usePokemon } from "../context/PokemonContext";
-import { releaseAction } from "../context/PokemonReducer";
+import { usePokemon } from "../context";
+import { releaseAction } from "../context/reducer";
 
 const OwnedPokemon = ({ pokemonData }) => {
   const { dispatch } = usePokemon();

@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { MdCatchingPokemon } from "react-icons/md";
 
 import PokemonLogo from "../asset/pokemon-logo.svg";
-import { usePokemon } from "../context/PokemonContext";
+import { usePokemon } from "../context";
 
 const Header = () => {
   const { myPokemon } = usePokemon();

@@ -3,14 +3,6 @@ import { Box, Badge } from "@chakra-ui/react";
 
 import { PokemonColors } from "../../constants/PokemonColors";
 
-const badge_type = {
-  variant: "solid",
-  mr: "10px",
-  px: "30px",
-  textTransform: "capitalize",
-  fontSize: "xl",
-};
-
 const PokemonTypes = ({ typeList }) => {
   return (
     <Box>
@@ -25,6 +17,14 @@ const PokemonTypes = ({ typeList }) => {
       ))}
     </Box>
   );
+};
+
+const badge_type = {
+  variant: "solid",
+  mr: "10px",
+  px: "30px",
+  textTransform: "capitalize",
+  fontSize: "xl",
 };
 
 export default PokemonTypes;

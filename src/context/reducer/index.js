@@ -1,4 +1,4 @@
-export const pokemonReducer = (state, action) => {
+export const reducer = (state, action) => {
   switch (action.type) {
     case "catch_pokemon": {
       return [...state, action.pokemon];

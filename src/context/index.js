@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useReducer } from "react";
-import { pokemonReducer } from "./PokemonReducer";
+import { reducer } from "./reducer";
 
 const PokemonContext = createContext();
 
@@ -7,7 +7,7 @@ const initializer = (initialValue = []) =>
   JSON.parse(localStorage.getItem("my_pokemon")) || initialValue;
 
 export const PokemonProvider = ({ children }) => {
-  const [myPokemon, dispatch] = useReducer(pokemonReducer, [], initializer);
+  const [myPokemon, dispatch] = useReducer(reducer, [], initializer);
 
   useEffect(() => {
     localStorage.setItem("my_pokemon", JSON.stringify(myPokemon));

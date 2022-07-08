@@ -8,20 +8,6 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const pokemon_container = {
-  boxShadow: "inset 0 0 0 1px #e1e1e1",
-  borderRadius: "5px",
-  padding: "20px",
-  textAlign: "center",
-};
-
-const pokemon_abilities = {
-  textTransform: "capitalize",
-  textAlign: "center",
-  fontSize: "2xl",
-  fontWeight: "semibold",
-};
-
 const PokemonAbilitiesMeasurements = ({ height, weight, abilities }) => {
   return (
     <Box w="full">
@@ -41,6 +27,20 @@ const PokemonAbilitiesMeasurements = ({ height, weight, abilities }) => {
       </StatGroup>
     </Box>
   );
+};
+
+const pokemon_container = {
+  boxShadow: "inset 0 0 0 1px #e1e1e1",
+  borderRadius: "5px",
+  padding: "20px",
+  textAlign: "center",
+};
+
+const pokemon_abilities = {
+  textTransform: "capitalize",
+  textAlign: "center",
+  fontSize: "2xl",
+  fontWeight: "semibold",
 };
 
 export default PokemonAbilitiesMeasurements;

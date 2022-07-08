@@ -1,6 +1,32 @@
 import { useHistory } from "react-router-dom";
 import { Box, Image, Text } from "@chakra-ui/react";
-import { usePokemon } from "../context/PokemonContext";
+import { usePokemon } from "../context";
+
+const WildPokemon = ({ pokemonData }) => {
+  const { myPokemon } = usePokemon();
+  const history = useHistory();
+  const pokemonCount = myPokemon.filter(
+    (pokemon) => pokemon.name === pokemonData.name
+  ).length;
+
+  const goToPokemon = () => {
+    history.push(`/${pokemonData.name}`);
+  };
+
+  return (
+    <Box {...pokemon_container} onClick={goToPokemon}>
+      <Text {...pokemon_name}>{pokemonData.name}</Text>
+      <Image
+        {...pokemon_img}
+        src={pokemonData.image}
+        alt={pokemonData.name + " image"}
+      />
+      <Box>
+        {pokemonCount !== 0 && <Text {...pokemon_count}>{pokemonCount}x</Text>}
+      </Box>
+    </Box>
+  );
+};
 
 const pokemon_container = {
   display: "flex",
@@ -31,32 +57,6 @@ const pokemon_count = {
   lineHeight: "tight",
   padding: "10px",
   zIndex: "popover",
-};
-
-const WildPokemon = ({ pokemonData }) => {
-  const { myPokemon } = usePokemon();
-  const history = useHistory();
-  const pokemonCount = myPokemon.filter(
-    (pokemon) => pokemon.name === pokemonData.name
-  ).length;
-
-  const goToPokemon = () => {
-    history.push(`/${pokemonData.name}`);
-  };
-
-  return (
-    <Box {...pokemon_container} onClick={goToPokemon}>
-      <Text {...pokemon_name}>{pokemonData.name}</Text>
-      <Image
-        {...pokemon_img}
-        src={pokemonData.image}
-        alt={pokemonData.name + " image"}
-      />
-      <Box>
-        {pokemonCount !== 0 && <Text {...pokemon_count}>{pokemonCount}x</Text>}
-      </Box>
-    </Box>
-  );
 };
 
 export default WildPokemon;

@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { PokemonProvider } from "./context/PokemonContext";
+import { PokemonProvider } from "./context";
 
 import MyPokemon from "./page/MyPokemon";
 import PokemonDetail from "./page/Pokemon";

@@ -1,7 +1,7 @@
 import { Box, Container, Text } from "@chakra-ui/react";
 
 import OwnedPokemon from "../component/OwnedPokemon";
-import { usePokemon } from "../context/PokemonContext";
+import { usePokemon } from "../context";
 
 const MyPokemon = () => {
   const { myPokemon } = usePokemon();

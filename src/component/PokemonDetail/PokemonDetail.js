@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import { Flex, VStack, Box, Text, Image, Button } from "@chakra-ui/react";
 
-import { usePokemon } from "../../context/PokemonContext";
-import { catchAction } from "../../context/PokemonReducer";
+import { usePokemon } from "../../context";
+import { catchAction } from "../../context/reducer";
 
 import { PokemonColors } from "../../constants/PokemonColors";
 
@@ -15,45 +15,6 @@ import FailCatchModal from "../FailCatchModal";
 import SuccessCatchModal from "../SuccessCatchModal";
 
 import PokeBall from "../../asset/pokeball.svg";
-
-const section_title = {
-  fontWeight: "Bold",
-  fontSize: "24px",
-};
-
-const pokemon_img = {
-  display: "block",
-  boxSize: "400px",
-  m: "auto",
-};
-
-const pokemon_name = {
-  fontWeight: "Bold",
-  fontSize: "36px",
-  margin: "20px 5px 5px",
-  textTransform: "capitalize",
-  textAlign: "center",
-};
-
-const button_container = {
-  justify: "space-between",
-  overflow: "hidden",
-  position: "fixed",
-  bottom: "0",
-  width: "100%",
-  left: "0",
-  wrap: "wrap",
-  padding: "1rem 0",
-};
-
-const button_img = {
-  boxShadow: "xl",
-  borderRadius: "full",
-  cursor: "pointer",
-  height: "30px",
-  width: "30px",
-  alt: "Catch Pokemon",
-};
 
 const PokemonDetail = ({ pokemonData }) => {
   const { myPokemon, dispatch } = usePokemon();
@@ -168,6 +129,45 @@ const PokemonDetail = ({ pokemonData }) => {
       </Flex>
     </>
   );
+};
+
+const section_title = {
+  fontWeight: "Bold",
+  fontSize: "24px",
+};
+
+const pokemon_img = {
+  display: "block",
+  boxSize: "400px",
+  m: "auto",
+};
+
+const pokemon_name = {
+  fontWeight: "Bold",
+  fontSize: "36px",
+  margin: "20px 5px 5px",
+  textTransform: "capitalize",
+  textAlign: "center",
+};
+
+const button_container = {
+  justify: "space-between",
+  overflow: "hidden",
+  position: "fixed",
+  bottom: "0",
+  width: "100%",
+  left: "0",
+  wrap: "wrap",
+  padding: "1rem 0",
+};
+
+const button_img = {
+  boxShadow: "xl",
+  borderRadius: "full",
+  cursor: "pointer",
+  height: "30px",
+  width: "30px",
+  alt: "Catch Pokemon",
 };
 
 export default PokemonDetail;
