@@ -1,10 +1,10 @@
 import { css } from "@emotion/css";
 
-const Modal = ({ show, children }) => {
+export default function Modal({ show, children }) {
   if (!show) return null;
 
   return <div className={modalStyles}>{children}</div>;
-};
+}
 
 const modalStyles = css`
   position: fixed;
@@ -19,5 +19,3 @@ const modalStyles = css`
   z-index: 10;
   display: flex;
 `;
-
-export default Modal;

@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
 import { Container, Skeleton, SimpleGrid } from "@chakra-ui/react";
@@ -9,7 +8,7 @@ import InfiniteScroll from "react-infinite-scroll-component";
 
 const LIMIT = 20;
 
-function PokemonList() {
+export default function PokemonList() {
   const [pokemonData, setPokemonData] = useState([]);
   const [offset, setOffset] = useState(0);
   const [hasMore, setHasMore] = useState(true);
@@ -59,5 +58,3 @@ function PokemonList() {
     </Container>
   );
 }
-
-export default PokemonList;

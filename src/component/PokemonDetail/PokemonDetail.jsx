@@ -14,9 +14,9 @@ import PokemonMoves from "./PokemonMoves";
 import FailCatchModal from "../FailCatchModal";
 import SuccessCatchModal from "../SuccessCatchModal";
 
-import PokeBall from "../../asset/pokeball.svg";
+import PokeBall from "../../assets/pokeball.svg";
 
-const PokemonDetail = ({ pokemonData }) => {
+export default function PokemonDetail({ pokemonData }) {
   const { myPokemon, dispatch } = usePokemon();
   const [showModal, setShowModal] = useState(null);
   const [img, setImg] = useState("front_default");
@@ -129,7 +129,7 @@ const PokemonDetail = ({ pokemonData }) => {
       </Flex>
     </>
   );
-};
+}
 
 const section_title = {
   fontWeight: "Bold",
@@ -169,5 +169,3 @@ const button_img = {
   width: "30px",
   alt: "Catch Pokemon",
 };
-
-export default PokemonDetail;

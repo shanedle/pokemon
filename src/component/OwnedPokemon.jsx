@@ -3,7 +3,7 @@ import { useHistory } from "react-router-dom";
 import { usePokemon } from "../context";
 import { releaseAction } from "../context/reducer";
 
-const OwnedPokemon = ({ pokemonData }) => {
+export default function OwnedPokemon({ pokemonData }) {
   const { dispatch } = usePokemon();
   const history = useHistory();
 
@@ -32,7 +32,7 @@ const OwnedPokemon = ({ pokemonData }) => {
       </button>
     </div>
   );
-};
+}
 
 const styles = {
   component: css`
@@ -69,5 +69,3 @@ const styles = {
     font-weight: 700;
   `,
 };
-
-export default OwnedPokemon;

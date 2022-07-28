@@ -3,7 +3,7 @@ import { Box, Container, Text } from "@chakra-ui/react";
 import OwnedPokemon from "../component/OwnedPokemon";
 import { usePokemon } from "../context";
 
-const MyPokemon = () => {
+export default function MyPokemon() {
   const { myPokemon } = usePokemon();
 
   return (
@@ -26,6 +26,4 @@ const MyPokemon = () => {
       )}
     </Container>
   );
-};
-
-export default MyPokemon;
+}

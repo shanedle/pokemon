@@ -1,9 +1,9 @@
 import { css } from "@emotion/css";
 import { useState } from "react";
 import Modal from "./Modal";
-import PokeBall from "../asset/pokeball.svg";
+import PokeBall from "../assets/pokeball.svg";
 
-const SuccessCatchModal = ({ isShow, onClick, pokemonName }) => {
+export default function SuccessCatchModal({ isShow, onClick, pokemonName }) {
   const [nickname, setNickname] = useState("");
 
   const savePokemon = () => {
@@ -31,7 +31,7 @@ const SuccessCatchModal = ({ isShow, onClick, pokemonName }) => {
       </form>
     </Modal>
   );
-};
+}
 
 const styles = {
   container: css`
@@ -71,5 +71,3 @@ const styles = {
     border-style: solid;
   `,
 };
-
-export default SuccessCatchModal;

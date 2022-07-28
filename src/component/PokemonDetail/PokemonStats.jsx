@@ -1,7 +1,7 @@
 import React from "react";
 import { Text, Box, Progress, Grid } from "@chakra-ui/react";
 
-const PokemonStats = ({ statList }) => {
+export default function PokemonStats({ statList }) {
   return (
     <Box w="full">
       {statList.map((stat) => (
@@ -19,7 +19,7 @@ const PokemonStats = ({ statList }) => {
       ))}
     </Box>
   );
-};
+}
 
 const progress_style = {
   marginTop: "5px",
@@ -36,5 +36,3 @@ const stat_value = {
 const stat_name = {
   textTransform: "uppercase",
 };
-
-export default PokemonStats;

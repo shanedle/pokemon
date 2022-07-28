@@ -2,9 +2,10 @@ import { useHistory } from "react-router-dom";
 import { Box, Image, Text } from "@chakra-ui/react";
 import { usePokemon } from "../context";
 
-const WildPokemon = ({ pokemonData }) => {
+export default function WildPokemon({ pokemonData }) {
   const { myPokemon } = usePokemon();
   const history = useHistory();
+
   const pokemonCount = myPokemon.filter(
     (pokemon) => pokemon.name === pokemonData.name
   ).length;
@@ -26,7 +27,7 @@ const WildPokemon = ({ pokemonData }) => {
       </Box>
     </Box>
   );
-};
+}
 
 const pokemon_container = {
   display: "flex",
@@ -58,5 +59,3 @@ const pokemon_count = {
   padding: "10px",
   zIndex: "popover",
 };
-
-export default WildPokemon;

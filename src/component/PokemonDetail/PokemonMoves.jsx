@@ -12,7 +12,7 @@ import {
   Td,
 } from "@chakra-ui/react";
 
-const PokemonMoves = ({ movesList }) => {
+export default function PokemonMoves({ movesList }) {
   return (
     <Box w="full">
       <Accordion allowMultiple>
@@ -38,6 +38,4 @@ const PokemonMoves = ({ movesList }) => {
       </Accordion>
     </Box>
   );
-};
-
-export default PokemonMoves;
+}

@@ -6,7 +6,7 @@ import PokemonDetail from "./page/Pokemon";
 import PokemonList from "./page/PokemonList";
 import Header from "./component/Header";
 
-const App = () => {
+export default function App() {
   return (
     <PokemonProvider value={[]}>
       <Router>
@@ -25,6 +25,4 @@ const App = () => {
       </Router>
     </PokemonProvider>
   );
-};
-
-export default App;
+}

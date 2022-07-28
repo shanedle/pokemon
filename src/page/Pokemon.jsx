@@ -5,7 +5,7 @@ import { Container, Skeleton, SkeletonText } from "@chakra-ui/react";
 import { GET_POKEMON } from "../queries";
 import PokemonDetail from "../component/PokemonDetail/PokemonDetail";
 
-const Pokemon = () => {
+export default function Pokemon() {
   const { pokemon } = useParams();
 
   const { data, loading } = useQuery(GET_POKEMON, {
@@ -29,6 +29,4 @@ const Pokemon = () => {
       <PokemonDetail pokemonData={data.pokemon} />
     </Container>
   );
-};
-
-export default Pokemon;
+}

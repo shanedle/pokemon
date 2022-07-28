@@ -1,7 +1,7 @@
 import { css } from "@emotion/css";
 import Modal from "./Modal";
 
-const FailCatchModal = ({ isShow, onClick, pokemonName }) => {
+export default function FailCatchModal({ isShow, onClick, pokemonName }) {
   return (
     <Modal show={isShow}>
       <div className={styles.container}>
@@ -12,7 +12,7 @@ const FailCatchModal = ({ isShow, onClick, pokemonName }) => {
       </div>
     </Modal>
   );
-};
+}
 
 const styles = {
   container: css`
@@ -34,5 +34,3 @@ const styles = {
     width: 100%;
   `,
 };
-
-export default FailCatchModal;

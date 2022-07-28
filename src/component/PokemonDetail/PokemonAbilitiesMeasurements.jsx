@@ -8,7 +8,11 @@ import {
   Text,
 } from "@chakra-ui/react";
 
-const PokemonAbilitiesMeasurements = ({ height, weight, abilities }) => {
+export default function PokemonAbilitiesMeasurements({
+  height,
+  weight,
+  abilities,
+}) {
   return (
     <Box w="full">
       <StatGroup {...pokemon_container}>
@@ -27,7 +31,7 @@ const PokemonAbilitiesMeasurements = ({ height, weight, abilities }) => {
       </StatGroup>
     </Box>
   );
-};
+}
 
 const pokemon_container = {
   boxShadow: "inset 0 0 0 1px #e1e1e1",
@@ -42,5 +46,3 @@ const pokemon_abilities = {
   fontSize: "2xl",
   fontWeight: "semibold",
 };
-
-export default PokemonAbilitiesMeasurements;

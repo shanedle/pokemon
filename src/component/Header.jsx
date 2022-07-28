@@ -2,10 +2,10 @@ import { Flex, Image, Button, Box } from "@chakra-ui/react";
 import { useHistory } from "react-router-dom";
 import { MdCatchingPokemon } from "react-icons/md";
 
-import PokemonLogo from "../asset/pokemon-logo.svg";
+import PokemonLogo from "../assets/pokemon-logo.svg";
 import { usePokemon } from "../context";
 
-const Header = () => {
+export default function Header() {
   const { myPokemon } = usePokemon();
   const history = useHistory();
 
@@ -37,6 +37,4 @@ const Header = () => {
       </Button>
     </Flex>
   );
-};
-
-export default Header;
+}
