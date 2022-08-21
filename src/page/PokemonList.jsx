@@ -1,10 +1,17 @@
 import { useEffect, useState } from "react";
 import { useQuery } from "@apollo/client";
-import { Container, Skeleton, SimpleGrid } from "@chakra-ui/react";
+import InfiniteScroll from "react-infinite-scroll-component";
+import {
+  Container,
+  Skeleton,
+  SimpleGrid,
+  Box,
+  IconButton,
+} from "@chakra-ui/react";
+import { MdOutlineArrowUpward } from "react-icons/md";
 
 import { GET_POKEMONS } from "../queries";
 import WildPokemon from "../component/WildPokemon";
-import InfiniteScroll from "react-infinite-scroll-component";
 
 const LIMIT = 20;
 
@@ -55,6 +62,22 @@ export default function PokemonList() {
           ))}
         </SimpleGrid>
       </InfiniteScroll>
+      <Box {...button_container}>
+        <IconButton
+          aria-label="Scroll to top"
+          icon={<MdOutlineArrowUpward />}
+          onClick={() => {
+            window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+          }}
+        />
+      </Box>
     </Container>
   );
 }
+
+const button_container = {
+  position: "fixed",
+  bottom: "0",
+  right: "0",
+  padding: "1rem 1rem",
+};
