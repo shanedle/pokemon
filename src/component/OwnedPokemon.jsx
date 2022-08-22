@@ -1,5 +1,6 @@
-import { css } from "@emotion/css";
 import { useHistory } from "react-router-dom";
+import { Box, Image, Text, Button } from "@chakra-ui/react";
+
 import { usePokemon } from "../context";
 import { releaseAction } from "../context/reducer";
 
@@ -12,60 +13,60 @@ export default function OwnedPokemon({ pokemonData }) {
   };
 
   return (
-    <div className={styles.component}>
-      <div className={styles.imgParent} onClick={goToPokemon}>
-        <img
+    <Box {...pokemon_container}>
+      <Box {...pokemon_img_container} onClick={goToPokemon}>
+        <Image
+          {...pokemon_img}
           src={pokemonData.sprites.front_default}
-          className={styles.img}
           alt={pokemonData.name + " image"}
         />
-      </div>
-      <div className={styles.pokemonNameParent} onClick={goToPokemon}>
-        <h3 className={styles.pokemonNickname}>{pokemonData.nickname}</h3>
-        <p className={styles.pokemonName}>{pokemonData.name}</p>
-      </div>
-      <button
-        className={styles.release}
+      </Box>
+      <Box {...pokemon_name_container} onClick={goToPokemon}>
+        <Text>{pokemonData.nickname}</Text>
+        <Text>{pokemonData.name}</Text>
+      </Box>
+      <Button
+        {...pokemon_release}
         onClick={() => dispatch(releaseAction(pokemonData.id))}
       >
         Release
-      </button>
-    </div>
+      </Button>
+    </Box>
   );
 }
 
-const styles = {
-  component: css`
-    display: flex;
-    background-color: white;
-    border-radius: 25px;
-    margin-bottom: 1rem;
-  `,
-  imgParent: css`
-    width: 96px;
-    height: 96px;
-  `,
-  img: css`
-    width: 100%;
-  `,
-  pokemonNameParent: css`
-    margin: auto 0;
-    flex: 1;
-    padding: 1rem 0;
-  `,
-  pokemonNickname: css`
-    margin: 0;
-  `,
-  pokemonName: css`
-    margin: 0;
-  `,
-  release: css`
-    margin: auto 1rem auto 0;
-    padding: 0.4rem 0.75rem;
-    justify-content: center;
-    border-radius: 25px;
-    background-color: #fd4c61;
-    color: white;
-    font-weight: 700;
-  `,
+const pokemon_container = {
+  display: "flex",
+  backgroundColor: "white",
+  boxShadow: "base",
+  rounded: "md",
+  marginBottom: "1rem",
+};
+
+const pokemon_img_container = {
+  width: "100px",
+  height: "100px",
+  cursor: "pointer",
+};
+
+const pokemon_img = {
+  width: "100%",
+};
+
+const pokemon_name_container = {
+  textTransform: "capitalize",
+  margin: "auto 0",
+  flex: "1",
+  padding: "1rem 0",
+  cursor: "pointer",
+};
+
+const pokemon_release = {
+  margin: "auto 1rem auto 0",
+  padding: "0.4rem 0.75rem",
+  justifyContent: "center",
+  rounded: "md",
+  backgroundColor: "#fd4c61",
+  color: "white",
+  fontWeight: "bold",
 };
