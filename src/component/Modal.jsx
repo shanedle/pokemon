@@ -1,21 +1,21 @@
-import { css } from "@emotion/css";
+import { Box } from "@chakra-ui/react";
 
 export default function Modal({ show, children }) {
   if (!show) return null;
 
-  return <div className={modalStyles}>{children}</div>;
+  return <Box {...modal_styles}>{children}</Box>;
 }
 
-const modalStyles = css`
-  position: fixed;
-  background: rgba(0, 0, 0, 0.4);
-  top: 0;
-  bottom: 0;
-  right: 0;
-  left: 0;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  z-index: 10;
-  display: flex;
-`;
+const modal_styles = {
+  display: "flex",
+  alignItems: "center",
+  justifyContent: "center",
+  position: "fixed",
+  zIndex: "10",
+  background: "rgba(0, 0, 0, 0.4)",
+  top: "0",
+  bottom: "0",
+  right: "0",
+  left: "0",
+  padding: "1rem",
+};

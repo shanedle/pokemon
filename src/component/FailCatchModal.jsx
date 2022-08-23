@@ -1,36 +1,37 @@
-import { css } from "@emotion/css";
+import { Box, Text, Button } from "@chakra-ui/react";
+
 import Modal from "./Modal";
 
 export default function FailCatchModal({ isShow, onClick, pokemonName }) {
   return (
     <Modal show={isShow}>
-      <div className={styles.container}>
-        <p className={styles.title}>Oh no! The wild {pokemonName} fled.</p>
-        <button className={styles.button} onClick={onClick}>
+      <Box {...modal_container}>
+        <Text {...modal_text}>Oh no! The wild {pokemonName} fled.</Text>
+        <Button {...modal_button} onClick={onClick}>
           Okay
-        </button>
-      </div>
+        </Button>
+      </Box>
     </Modal>
   );
 }
 
-const styles = {
-  container: css`
-    background-color: white;
-    padding: 1rem;
-    border-radius: 1rem;
-  `,
-  title: css`
-    padding: 1rem;
-    margin-top: 0;
-  `,
-  button: css`
-    padding: 0.5rem;
-    margin: 0;
-    text-align: center;
-    border-radius: 100px;
-    background-color: #ffcb05;
-    display: block;
-    width: 100%;
-  `,
+const modal_container = {
+  backgroundColor: "white",
+  padding: "1rem",
+  borderRadius: "1rem",
+};
+
+const modal_text = {
+  padding: "1rem",
+  marginTop: "0",
+};
+
+const modal_button = {
+  padding: "0.5rem",
+  margin: "0",
+  textAlign: "center",
+  borderRadius: "100px",
+  backgroundColor: "#ffcb05",
+  display: "block",
+  width: "100%",
 };

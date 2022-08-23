@@ -1,5 +1,7 @@
-import { css } from "@emotion/css";
 import { useState } from "react";
+import { css } from "@emotion/css";
+import { Image, Text, Button } from "@chakra-ui/react";
+
 import Modal from "./Modal";
 import PokeBall from "../assets/pokeball.svg";
 
@@ -14,52 +16,55 @@ export default function SuccessCatchModal({ isShow, onClick, pokemonName }) {
   return (
     <Modal show={isShow}>
       <form className={styles.container} onSubmit={savePokemon}>
-        <p className={styles.title}>Gotcha! {pokemonName} was caught!</p>
+        <Text {...modal_text}>Gotcha! {pokemonName} was caught!</Text>
 
-        <img src={PokeBall} className={styles.logo} alt="pokeball" />
+        <Image {...modal_image} src={PokeBall} alt="pokeball" />
         <input
+          className={styles.input}
           type="text"
           value={nickname}
-          className={styles.input}
           required
           placeholder="Nickname"
           onChange={(e) => setNickname(e.target.value)}
         />
-        <button type="submit" className={styles.button}>
+        <Button {...modal_button} type="submit">
           Okay
-        </button>
+        </Button>
       </form>
     </Modal>
   );
 }
+
+const modal_image = {
+  width: "12rem",
+  display: "flex",
+  margin: "auto",
+  marginBottom: "1rem",
+};
+
+const modal_text = {
+  padding: "1rem",
+  margin: "0",
+  textAlign: "center",
+  fontWeight: "700",
+  textTransform: "capitalize",
+};
+
+const modal_button = {
+  padding: "0.5rem",
+  margin: "0",
+  textAlign: "center",
+  borderRadius: "100px",
+  backgroundColor: "#ffcb05",
+  display: "block",
+  width: "100%",
+};
 
 const styles = {
   container: css`
     background-color: white;
     padding: 1rem;
     border-radius: 1rem;
-  `,
-  title: css`
-    padding: 1rem;
-    margin: 0;
-    text-align: center;
-    font-weight: 700;
-    text-transform: capitalize;
-  `,
-  logo: css`
-    width: 12rem;
-    display: flex;
-    margin: auto;
-    margin-bottom: 1rem;
-  `,
-  button: css`
-    padding: 0.5rem;
-    margin: 0;
-    text-align: center;
-    border-radius: 100px;
-    background-color: #ffcb05;
-    display: block;
-    width: 100%;
   `,
   input: css`
     width: 100%;
