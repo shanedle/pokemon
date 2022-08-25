@@ -1,5 +1,5 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import ReactDOM from "react-dom/client";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
 import { createBreakpoints } from "@chakra-ui/theme-tools";
 import {
@@ -28,13 +28,12 @@ const client = new ApolloClient({
   }),
 });
 
-ReactDOM.render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <ChakraProvider theme={theme}>
       <ApolloProvider client={client}>
         <App />
       </ApolloProvider>
     </ChakraProvider>
-  </React.StrictMode>,
-  document.getElementById("root")
+  </React.StrictMode>
 );

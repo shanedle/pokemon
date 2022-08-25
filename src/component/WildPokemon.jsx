@@ -1,5 +1,6 @@
 import { useHistory } from "react-router-dom";
 import { Box, Image, Text } from "@chakra-ui/react";
+
 import { usePokemon } from "../context";
 
 export default function WildPokemon({ pokemonData }) {
